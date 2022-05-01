@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <html>
+        <body>
+            <h1>Test</h1>
+            <ul>
+                <h2>1. 환자와 방문 테이블들의 간단한 통계 제공</h2>
+                <li>환자</li>
+                <ul>
+                    <li><a href='/patient/count/'>전체 환자 수</a></li>
+                    <li><a href='/patient/gender_count/'>성별 환자 수</a></li>
+                    <li><a href='/patient/race_count/'>인종별 환자 수</a></li>
+                    <li><a href='/patient/ethnicity_count/'>민족별 환자 수</a></li>
+                    <li><a href='/patient/death_count/'>사망 환자 수</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <li>방문</li>
+                <ul>
+                    <li><a href='/patient/visit_concept/'>방문 유형(입원/외래/응급)별 방문 수</a></li>
+                    <li><a href='/patient/gender_visit_count/'>성별 방문 수</a></li>
+                    <li><a href='/patient/race_visit_count/'>인종별 방문 수</a></li>
+                    <li><a href='/patient/ethnicity_visit_count/'>민족별 방문 수</a></li>
+                    <li><a href='/patient/age_visit_count/'>방문시 연령대(10세 단위)별 방문 수</a></li>
+                </ul>
+            </ul>
+            <ul>
+                <h2>2. 각 테이블에 사용된 concept_id들의 정보를 얻을 수 있는 API</h2>
+                <form action="/concept_search/" method="POST">
+                    <select name="option" >
+                        <option value="none">=== 선택 ===</option>
+                        <option value="gender">성별</option>
+                        <option value="race">인종</option>
+                        <option value="ethnicity">민족</option>
+                        <option value="visit">방문유형</option>
+                        <option value="condition">진단</option>
+                        <option value="drug">처방약품</option>
+                    </select>
+                    <input type="text" id="value" name="value" requiredminlength="4" maxlength="8" size="10">
+                    <button type="submit">검색</button></a>
+                </form>
+
+<!--                <button onClick="window.open('https://www.naver.com')">검색</button>-->
+            </ul>
+        </body>
+    </html>

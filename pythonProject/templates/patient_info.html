@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 총 환자 수 -->
+    {% if value == 'count' %}
+    <h2>총 환자 수</h2>
+    총 환자는 {{data[0][0]}} 명 입니다.
+    <!--  성별 환자 수  -->
+    {% elif value == 'gender_count' %}
+    <h2>성별 환자 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} 환자 수 : {{i[1]}}명</li>
+    {% endfor %}
+    <!--  인종별 환자 수  -->
+    {% elif value == 'race_count' %}
+    <h2>인종별 환자 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} 환자 수 : {{i[1]}}명</li>
+    {% endfor %}
+    <!--  민족별 환자 수  -->
+    {% elif value == 'ethnicity_count' %}
+    <h2>민족별 환자 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} 환자 수 : {{i[1]}}명</li>
+    {% endfor %}
+    <!--  사망한 환자 수  -->
+    {% elif value == 'death_count' %}
+    <h2>사망한 환자 수</h2>
+    사망한 환자수는 {{data[0][0]}} 명 입니다.
+    <!--  방문유형별 방문횟수  -->
+    {% elif value == 'visit_concept' %}
+    <h2>방문 유형(입원/외래/응급)별 방문 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} 환자 {{i[1]}} 목적 {{i[2]}}번 방문</li>
+    {% endfor %}
+     <!--  성별 방문횟수  -->
+    {% elif value == 'gender_visit_count' %}
+    <h2>성별 방문 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} {{i[1]}}번 방문</li>
+    {% endfor %}
+    <!--  인종별 방문 수  -->
+    {% elif value == 'race_visit_count' %}
+    <h2>인종별 방문 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} {{i[1]}}번 방문</li>
+    {% endfor %}
+    <!--  민족별 방문 수  -->
+    {% elif value == 'ethnicity_visit_count' %}
+    <h2>민족별 방문 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} {{i[1]}}번 방문</li>
+    {% endfor %}
+    <!--  연령대(10세 단위)별 방문 수  -->
+    {% elif value == 'age_visit_count' %}
+    <h2>연령대(10세 단위)별 방문 수</h2>
+    {%for i in data%}
+    <li>{{i[0]}} : {{i[1]}}번 방문</li>
+    {% endfor %}
+    {% endif %}
+</head>
+<body>
+
+</body>
+</html>

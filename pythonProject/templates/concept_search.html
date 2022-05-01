@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if option == 'gender' %}
+    <h2>성별 검색</h2>
+    {%for i in data%}
+    <li>환자 : {{i[0]}} / 성별 : {{i[1]}}</li>
+    {% endfor %}
+    {% elif option == 'race' %}
+    <h2>인종 검색</h2>
+    {%for i in data%}
+    <li>환자 : {{i[0]}} / 인종 : {{i[1]}}</li>
+    {% endfor %}
+    {% elif option == 'ethnicity' %}
+    <h2>민족 검색</h2>
+    {%for i in data%}
+    <li>환자 : {{i[0]}} / 민족 : {{i[1]}}</li>
+    {% endfor %}
+    {% elif option == 'visit' %}
+    <h2>방문유형 검색</h2>
+    {%for i in data%}
+    <li>환자 : {{i[0]}} / 방문유형 : {{i[1]}}</li>
+    {% endfor %}
+    {% elif option == 'condition' %}
+    <h2>진단 검색</h2>
+    {%for i in data%}
+    <li>환자 : {{i[0]}} / 진단 : {{i[1]}}</li>
+    {% endfor %}
+    {% elif option == 'drug' %}
+    <h2>처방약품 검색</h2>
+    {%for i in data%}
+    <li>환자 : {{i[0]}} / 처방약품 : {{i[1]}}</li>
+    {% endfor %}
+    {% endif %}
+</head>
+<body>
+
+</body>
+</html>
